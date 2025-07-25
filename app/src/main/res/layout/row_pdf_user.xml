@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <!-- PDF Preview Section -->
+        <RelativeLayout
+            android:id="@+id/pdfRl"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:background="@color/gray02"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="8dp">
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdfView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/pdfRl"
+            android:layout_alignTop="@id/pdfRl"
+            android:ellipsize="end"
+            android:maxLines="1"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:text="Book Title" />
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:layout_marginTop="4dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="Book Description" />
+
+        <!-- Size -->
+        <TextView
+            android:id="@+id/sizeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:text="13MB" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/dateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sizeTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:text="dd/MM/yyyy"
+            android:layout_marginTop="2dp" />
+
+        <!-- Category -->
+        <TextView
+            android:id="@+id/categoryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:layout_marginTop="2dp"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Category" />
+
+        <!-- Rented On -->
+        <TextView
+            android:id="@+id/rentedOnTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categoryTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:text="Rented On: --"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp" />
+
+        <!-- Return By -->
+        <TextView
+            android:id="@+id/returnByTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rentedOnTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:text="Return By: --"
+            android:textColor="@color/black"
+            android:layout_marginTop="2dp" />
+
+        <!-- Buttons: Rent & Return -->
+        <Button
+            android:id="@+id/btnRent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rent"
+            android:layout_below="@id/returnByTv"
+            android:layout_toEndOf="@id/pdfRl"
+            android:layout_marginTop="6dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Return Book"
+            android:layout_below="@id/returnByTv"
+            android:layout_toStartOf="@id/btnRent"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
